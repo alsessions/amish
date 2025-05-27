@@ -1,0 +1,66 @@
+{% include '_partials/_head.twig' %}
+
+<body class="ltr bg-amber-50/50">
+
+<!-- Hero Section -->
+<section class="w-full relative h-80 md:h-96 lg:h-[32rem] overflow-hidden mb-8">
+    <img src="/assets/images/amish_wood.jpg" alt="Old Amish Barn" class="w-full h-full object-cover object-center" loading="eager" />
+    <!-- Navbar inside hero, full width, overlayed and fully transparent -->
+    {% include '_partials/_nav.twig' %}
+    <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg text-center">Our Products</h1>
+    </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 mb-16 min-h-screen">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
+    {% set products = craft.entries.section('products').level(1).all() %}
+
+    {% for product in products %}
+      <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col">
+        {% set asset = product.featuredImage.one() %}
+        <div class="w-full overflow-hidden">
+        {% if asset and attribute(asset, 'optimizedCard') is defined and asset.optimizedCard %}
+        
+          {{ asset.optimizedCard.imgTag().render({
+            alt: product.title,
+            class: 'w-full h-full object-cover object-center',
+            loading: 'lazy'
+          }) }}
+        
+        {% elseif asset %}
+        
+          <img src="{{ asset.url }}" alt="{{ product.title }}" class="w-full h-full object-cover object-center" loading="lazy" />
+        
+        {% else %}
+        
+          <div class="w-full h-full flex items-center justify-center text-amber-400 text-4xl">
+            <span>No Image</span>
+          </div>
+        
+        {% endif %}
+        </div>
+
+        <div class="p-4 flex-1 flex flex-col">
+          <h2 class="text-xl font-semibold mb-2">{{ product.title }}</h2>
+          {% if product.summary is defined and product.summary %}
+          
+            <p class="text-gray-700 mb-4">{{ product.summary|striptags|truncate(100) }}</p>
+          
+          {% endif %}
+          <a href="{{ product.url }}" class="mt-auto inline-block text-amber-700 hover:text-amber-900 font-medium">View Details &rarr;</a>
+        </div>
+      </div>
+    {% else %}
+      <div class="col-span-full text-center text-gray-500 py-12">
+        <p>No products found.</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# Use partial for footer #}
+{% include '_partials/_footer.twig' %}
+
+</body>
+</html>

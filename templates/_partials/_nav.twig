@@ -1,0 +1,52 @@
+<!-- Navbar inside hero, full width, overlayed and fully transparent -->
+    <nav class="absolute top-0 left-0 w-full z-20">
+      <div class="w-full">
+        <div class="flex items-center justify-between h-16 bg-white/10 backdrop-blur-sm shadow-none">
+          <div class="flex-shrink-0 pl-4">
+            <a href="/" class="text-xl font-bold text-white drop-shadow">Jeffs Amish Furniture</a>
+          </div>
+          <div class="hidden md:flex space-x-8 pr-4 items-center">
+            <div class="relative group" x-data="{ open: false }">
+              <a href="/products" class="text-white hover:text-amber-200 font-medium drop-shadow flex items-center" @mouseenter="open = true" @mouseleave="open = false" @click.prevent="open = !open">
+                Products
+                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </a>
+              <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition class="absolute left-0 mt-2 w-56 bg-white/95 rounded-lg shadow-lg py-2 px-2 z-30 min-w-[180px] max-w-xs">
+                {% set products = craft.entries.section('products').level(1).all() %}
+                {% for product in products %}
+                  <a href="{{ product.url }}" class="block px-3 py-2 text-gray-800 hover:bg-amber-100 hover:text-amber-700 rounded whitespace-normal break-words text-sm md:text-base transition-colors duration-150">{{ product.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <a href="/about" class="text-white hover:text-amber-200 font-medium drop-shadow">About</a>
+            <a href="/contact" class="text-white hover:text-amber-200 font-medium drop-shadow">Contact</a>
+          </div>
+          <!-- Hamburger -->
+          <div class="md:hidden flex items-center pr-4" x-data="{ open: false, drop: false }">
+            <button @click="open = !open" class="text-white hover:text-amber-200 focus:outline-none">
+              <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <!-- Mobile Menu -->
+            <div x-show="open" @click.away="open = false" class="absolute right-4 top-16 bg-white/80 rounded-lg shadow-lg py-2 px-6 flex flex-col space-y-2 min-w-[160px] z-30">
+              <div x-data="{ drop: false }">
+                <button @click="drop = !drop" class="flex items-center w-full text-gray-800 hover:text-amber-700 font-medium focus:outline-none">
+                  Products
+                  <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div x-show="drop" x-transition class="pl-4 mt-1 flex flex-col space-y-1">
+                  {% set products = craft.entries.section('products').level(1).all() %}
+                  {% for product in products %}
+                    <a href="{{ product.url }}" class="block px-2 py-2 text-gray-800 hover:text-amber-700 hover:bg-amber-100 rounded whitespace-normal break-words text-sm transition-colors duration-150">{{ product.title }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+              <a href="/about" class="text-gray-800 hover:text-amber-700 font-medium">About</a>
+              <a href="/contact" class="text-gray-800 hover:text-amber-700 font-medium">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
