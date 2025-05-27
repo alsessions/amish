@@ -8,10 +8,10 @@
 
 # Craft CMS specific
 /storage/
-#/web/assets/
-#/web/cpresources/
+/web/assets/
+/web/cpresources/
 /config/license.key*
-#/config/project/
+/config/project/
 
 # Node and build output
 /node_modules/
