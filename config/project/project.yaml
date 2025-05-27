@@ -1,4 +1,4 @@
-dateModified: 1748296946
+dateModified: 1748310879
 email:
   fromEmail: admin@example.com
   fromName: 'Jeffs Amish Furniture'
@@ -10,7 +10,7 @@ fs:
     settings:
       path: '@webroot/assets/images'
     type: craft\fs\Local
-    url: '@web/assets/images'
+    url: $PRIMARY_SITE_URL/assets/images
 meta:
   __names__:
     3c4fa3a1-3471-41b1-a0bd-92d1b1611553: 'Jeffs Amish Furniture' # Jeffs Amish Furniture
