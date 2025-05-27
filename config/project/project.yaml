@@ -1,0 +1,53 @@
+dateModified: 1748296946
+email:
+  fromEmail: admin@example.com
+  fromName: 'Jeffs Amish Furniture'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  images:
+    hasUrls: true
+    name: Images
+    settings:
+      path: '@webroot/assets/images'
+    type: craft\fs\Local
+    url: '@web/assets/images'
+meta:
+  __names__:
+    3c4fa3a1-3471-41b1-a0bd-92d1b1611553: 'Jeffs Amish Furniture' # Jeffs Amish Furniture
+    3ec41d95-2d59-45ff-a62f-23803f31acfc: Product # Product
+    5ac24545-f7d7-4723-becb-6e2728256162: 'Products Index' # Products Index
+    9c9c7c3f-641a-4caa-bd0c-80b8b84cb038: Summary # Summary
+    209b2ec4-e859-45bf-b13f-41718a860bb7: Simple # Simple
+    554e1d91-27c8-406c-93f4-7d8b0053103c: Body # Body
+    46692f35-2d90-4c5a-881a-b12fe38261bb: 'Featured Image' # Featured Image
+    d4a0c17c-c177-4c51-b9c1-db9ed5b3cab8: 'Jeffs Amish Furniture' # Jeffs Amish Furniture
+    d8e1fff6-4856-4995-baa0-63cd11e269d0: Images # Images
+    eb4751bc-b634-4972-b531-ee04ca79a67b: 'Optimized Card' # Optimized Card
+    f8b59243-10a7-4ff8-aff0-0894166c1489: 'Page Content' # Page Content
+    fa06da39-f6a6-4333-92f9-8f9083d89327: Products # Products
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  image-optimize:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: 'Jeffs Amish Furniture'
+  schemaVersion: 5.7.0.3
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

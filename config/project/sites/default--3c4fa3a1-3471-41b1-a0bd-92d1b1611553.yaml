@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: 'Jeffs Amish Furniture'
+primary: true
+siteGroup: d4a0c17c-c177-4c51-b9c1-db9ed5b3cab8 # Jeffs Amish Furniture
+sortOrder: 1
