@@ -23,7 +23,6 @@
   "require": {
     "craftcms/ckeditor": "^4.9.0",
     "craftcms/cms": "^5.0.0",
-    "mmikkel/cp-field-inspect": "^2.0.4",
     "nystudio107/craft-imageoptimize": "^5.0.7",
     "vlucas/phpdotenv": "^5.4.0"
   },
