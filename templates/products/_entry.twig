@@ -1,8 +1,13 @@
 {% extends '_layouts/base.twig' %}
 
 {% block hero %}
+{% set heroAsset = entry.featuredImage.one() %}
 <section class="w-full relative h-96 md:h-[28rem] lg:h-[38rem] overflow-hidden mb-8">
-    <img src="/assets/images/amish_wood.jpg" alt="Old Amish Barn" class="w-full h-full object-cover object-center" loading="eager" />
+    {% if heroAsset %}
+        <img src="{{ heroAsset.url }}" alt="{{ entry.title }}" class="w-full h-full object-cover object-center" loading="eager" />
+    {% else %}
+        <img src="/assets/images/amish_wood.jpg" alt="Old Amish Barn" class="w-full h-full object-cover object-center" loading="eager" />
+    {% endif %}
     {% include '_partials/_nav.twig' %}
     <div class="absolute inset-0 bg-black/30 flex items-center justify-center flex-col text-center px-4">
         <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg">{{ entry.title }}</h1>

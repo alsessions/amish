@@ -1,24 +1,24 @@
 {# Include the head partial #}
 {% include '_partials/_head.twig' %}
 
-<body class="{{ bodyClass|default('ltr bg-amber-100/50') }}">
+<body class="{{ bodyClass|default('ltr bg-amber-100/30') }}">
 
     {# Hero section block #}
     {% block hero %}
-    
+
     {% endblock %}
 
     <main>
-        
+
         {# Main content block #}
         {% block content %}
-        
+
         {% endblock %}
-        
+
     </main>
-    
+
     {# Include the footer partial #}
     {% include '_partials/_footer.twig' %}
-    
+
 </body>
 </html>

@@ -28,8 +28,7 @@ Thumbs.db
 *.dump
 *.bak
 
-# Deployment scripts
-deploy.sh
+
 
 # OS generated files
 *.swp
