@@ -31,7 +31,7 @@
         </div>
     </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    {% set products = craft.entries.section('products').level(1).all() %}
+    {% set products = craft.entries.section('furniture').level(1).all() %}
     {% for product in products %}
       <div class="bg-white rounded shadow-sm hover:shadow-md transition overflow-hidden flex flex-col">
         {% set asset = product.featuredImage.one() %}

@@ -22,47 +22,29 @@
 
 {% block content %}
 <section class="max-w-7xl mx-auto px-4 mb-16 min-h-screen">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
-    {% set products = entry.getChildren().all() %}
-    {% for product in products %}
-      <div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden flex flex-col">
-        {% set asset = product.featuredImage.one() %}
-        <div class="w-full overflow-hidden">
-        {% if asset and attribute(asset, 'optimizedCard') is defined and asset.optimizedCard %}
-
-          {{ asset.optimizedCard.imgTag().render({
-            alt: product.title,
-            class: 'w-full h-48 object-cover object-center',
-            loading: 'lazy'
-          }) }}
-
-        {% elseif asset %}
-
-          <img src="{{ asset.url }}" alt="{{ product.title }}" class="w-full h-48 object-cover object-center" loading="lazy" />
-
-        {% else %}
-
-          <div class="w-full h-48 bg-amber-100 flex items-center justify-center text-amber-400 text-4xl">
-            <span>No Image</span>
-          </div>
-
+  {% if entry.pageBuilder is defined and entry.pageBuilder|length %}
+    {% for block in entry.pageBuilder.all() %}
+      {% set asset = block.image.one() %}
+      <article class="grid gap-8 md:grid-cols-2 items-start mb-16">
+        {% if asset %}
+          <figure class="w-full">
+            <img
+              src="{{ asset.url }}"
+              alt="{{ asset.title ?? entry.title }}"
+              class="w-full h-auto rounded-lg shadow"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         {% endif %}
-        </div>
-        <div class="p-4 flex-1 flex flex-col">
-          <h2 class="text-xl font-semibold mb-2">{{ product.title }}</h2>
-          {% if product.summary is defined and product.summary %}
 
-            <p class="text-gray-700 mb-4">{{ product.summary|striptags|truncate(100) }}</p>
-
-          {% endif %}
-          <a href="{{ product.url }}" class="mt-auto inline-block text-amber-700 hover:text-amber-900 font-medium">View Details &rarr;</a>
-        </div>
-      </div>
-    {% else %}
-      <div class="col-span-full text-center text-gray-500 py-12">
-        <p>No products found.</p>
-      </div>
+        {% if block.body is defined and block.body %}
+          <div class="leading-relaxed text-lg">
+            {{ block.body|nl2br }}
+          </div>
+        {% endif %}
+      </article>
     {% endfor %}
-  </div>
+  {% endif %}
 </section>
 {% endblock %}
