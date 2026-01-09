@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: f8b59243-10a7-4ff8-aff0-0894166c1489 # Page Content
+handle: contactUs
+maxAuthors: 1
+name: 'Contact Us'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  3c4fa3a1-3471-41b1-a0bd-92d1b1611553: # Jeffs Amish Furniture
+    enabledByDefault: true
+    hasUrls: true
+    template: contact.twig
+    uriFormat: contact
+type: single
