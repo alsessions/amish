@@ -21,29 +21,32 @@
 {% endblock %}
 
 {% block content %}
-<section class="max-w-7xl mx-auto px-4 mb-16 min-h-screen">
+<section class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-16 min-h-screen">
   {% if entry.pageBuilder is defined and entry.pageBuilder|length %}
     {% for block in entry.pageBuilder.all() %}
-      {% set asset = block.image.one() %}
-      <article class="grid gap-8 md:grid-cols-2 items-start mb-16">
-        {% if asset %}
-          <figure class="w-full">
-            <img
-              src="{{ asset.url }}"
-              alt="{{ asset.title ?? entry.title }}"
-              class="w-full h-auto rounded-lg shadow"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-        {% endif %}
+      {# Text-only block #}
+      {% if block.body is defined and block.body %}
+        <div class="prose prose-lg leading-relaxed max-w-none mx-auto mb-10">
+          {{ block.body|nl2br }}
+        </div>
+      {% endif %}
 
-        {% if block.body is defined and block.body %}
-          <div class="leading-relaxed text-lg">
-            {{ block.body|nl2br }}
-          </div>
-        {% endif %}
-      </article>
+      {# Image-only block #}
+      {% set asset = block.image ? block.image.one() : null %}
+      {% if asset %}
+        <figure class="max-w-none mx-auto my-10">
+          <img
+            src="{{ asset.url }}"
+            alt="{{ asset.title ?? entry.title }}"
+            class="w-full h-auto rounded-xl shadow-lg"
+            loading="lazy"
+            decoding="async"
+          />
+          {% if asset.title %}
+            <figcaption class="mt-2 text-center text-sm text-gray-500">{{ asset.title }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
     {% endfor %}
   {% endif %}
 </section>

@@ -1,4 +1,4 @@
-dateModified: 1759867783
+dateModified: 1767975183
 email:
   fromEmail: admin@example.com
   fromName: 'Jeffs Amish Furniture'
@@ -17,7 +17,9 @@ meta:
     3c4fa3a1-3471-41b1-a0bd-92d1b1611553: 'Jeffs Amish Furniture' # Jeffs Amish Furniture
     3ec41d95-2d59-45ff-a62f-23803f31acfc: Product # Product
     5ac24545-f7d7-4723-becb-6e2728256162: 'Products Index' # Products Index
+    07b93a57-d74c-458a-bb95-f5bffa4e6b7b: Image # Image
     9c9c7c3f-641a-4caa-bd0c-80b8b84cb038: Summary # Summary
+    009c864c-69df-4137-aaf0-c7c9aa94e5a9: Text # Text
     052ec829-cd89-4e73-9d37-e3c1c3716d98: 'Page Builder' # Page Builder
     54cc2d09-8e13-4b06-ae04-d2d04ad2b962: 'Contact Us' # Contact Us
     209b2ec4-e859-45bf-b13f-41718a860bb7: Simple # Simple
@@ -36,10 +38,14 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  cp-clearcache:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   freeform:
     edition: express
     enabled: true
-    schemaVersion: 5.7.0
+    schemaVersion: 5.14.1
   image-optimize:
     edition: standard
     enabled: true
