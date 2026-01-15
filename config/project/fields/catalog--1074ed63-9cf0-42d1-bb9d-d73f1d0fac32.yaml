@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: catalog
+instructions: 'PDF product catalog.'
+name: Catalog
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - pdf
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:d8e1fff6-4856-4995-baa0-63cd11e269d0' # Images
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  previewMode: full
+  restrictFiles: false
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:e761d798-e850-4460-a152-68eaccb00dfc' # Catalogs
+  restrictedLocationSubpath: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets
