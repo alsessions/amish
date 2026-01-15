@@ -22,16 +22,21 @@
 
 {% block content %}
 <section class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-16 min-h-screen">
-  {% include '_partials/_ordering.twig' %}
   {% set catalogAsset = entry.catalog.one() %}
-  {% if catalogAsset %}
-    <div class="mb-10 flex justify-center">
+  <div class="mb-10 flex justify-center">
+    {% if catalogAsset %}
       <a href="{{ catalogAsset.url }}" target="_blank" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors duration-200">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-        Download Catalog
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path fill="#fff" d="M10 15.5v-3h1v3h-1zm2 0v-3h1v3h-1z"/></svg>
+        <span>Download Catalog <span class="text-xs opacity-80">({{ catalogAsset.size|filesize }})</span></span>
       </a>
-    </div>
-  {% endif %}
+    {% else %}
+      <span class="inline-flex items-center gap-3 bg-gray-400 text-gray-200 font-semibold px-6 py-3 rounded-lg shadow-lg cursor-not-allowed">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/></svg>
+        <span>Download Catalog</span>
+      </span>
+    {% endif %}
+  </div>
+  {% include '_partials/_ordering.twig' %}
 
   {% if entry.pageBuilder is defined and entry.pageBuilder|length %}
     {% for block in entry.pageBuilder.all() %}
