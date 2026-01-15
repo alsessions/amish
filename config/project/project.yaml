@@ -1,9 +1,16 @@
-dateModified: 1767978636
+dateModified: 1768436072
 email:
   fromEmail: admin@example.com
   fromName: 'Jeffs Amish Furniture'
   transportType: craft\mail\transportadapters\Sendmail
 fs:
+  catalogs:
+    hasUrls: true
+    name: Catalogs
+    settings:
+      path: '@webroot/catalogs'
+    type: craft\fs\Local
+    url: $PRIMARY_SITE_URL/catalogs
   images:
     hasUrls: true
     name: Images
@@ -24,12 +31,14 @@ meta:
     54cc2d09-8e13-4b06-ae04-d2d04ad2b962: 'Contact Us' # Contact Us
     209b2ec4-e859-45bf-b13f-41718a860bb7: Simple # Simple
     554e1d91-27c8-406c-93f4-7d8b0053103c: Body # Body
+    1074ed63-9cf0-42d1-bb9d-d73f1d0fac32: Catalog # Catalog
     9879dccc-a097-4855-aa3e-e8973ac227a1: Image # Image
     46692f35-2d90-4c5a-881a-b12fe38261bb: 'Featured Image' # Featured Image
     57448539-5980-4f7e-a2f8-f618d7d5a8d1: 'Public Schema' # Public Schema
     d4a0c17c-c177-4c51-b9c1-db9ed5b3cab8: 'Jeffs Amish Furniture' # Jeffs Amish Furniture
     d8e1fff6-4856-4995-baa0-63cd11e269d0: Images # Images
     d524211a-0921-4e1c-b85c-53439c75de38: About # About
+    e761d798-e850-4460-a152-68eaccb00dfc: Catalogs # Catalogs
     eb4751bc-b634-4972-b531-ee04ca79a67b: 'Optimized Card' # Optimized Card
     f8b59243-10a7-4ff8-aff0-0894166c1489: 'Page Content' # Page Content
     fa06da39-f6a6-4333-92f9-8f9083d89327: 'Furniture Section' # Furniture Section
