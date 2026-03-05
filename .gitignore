@@ -5,6 +5,8 @@
 /.env.php
 /.env.local
 /.env.production
+/config/license.key
+/config/license.key.*
 
 # COMPOSER
 /vendor
