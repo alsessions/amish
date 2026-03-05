@@ -1,4 +1,4 @@
-dateModified: 1768440867
+dateModified: 1772718926
 email:
   fromEmail: admin@example.com
   fromName: 'Jeffs Amish Furniture'
@@ -27,6 +27,7 @@ meta:
     07b93a57-d74c-458a-bb95-f5bffa4e6b7b: Image # Image
     9c9c7c3f-641a-4caa-bd0c-80b8b84cb038: Summary # Summary
     009c864c-69df-4137-aaf0-c7c9aa94e5a9: Text # Text
+    9d93bd96-bdd3-45ef-9cbc-bd10f7e614c6: 'Catalog Link' # Catalog Link
     052ec829-cd89-4e73-9d37-e3c1c3716d98: 'Page Builder' # Page Builder
     54cc2d09-8e13-4b06-ae04-d2d04ad2b962: 'Contact Us' # Contact Us
     209b2ec4-e859-45bf-b13f-41718a860bb7: Simple # Simple
