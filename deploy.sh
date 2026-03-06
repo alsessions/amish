@@ -17,7 +17,7 @@ php craft migrate/all --no-content --interactive=0
 php craft project-config/apply
 php craft migrate --track=content --interactive=0
 
-# Re-apply writable permissions for Apache/PHP
-./scripts/set-craft-permissions.sh "$(pwd)"
+# Re-apply writable permissions for Apache/PHP (run via bash; no chmod +x needed)
+bash ./scripts/set-craft-permissions.sh "$(pwd)"
 
 echo "🚀 Application deployed!"
