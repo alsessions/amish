@@ -1,4 +1,4 @@
-dateModified: 1772718926
+dateModified: 1772719416
 email:
   fromEmail: admin@example.com
   fromName: 'Jeffs Amish Furniture'
@@ -56,7 +56,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: ZJQMO7J4Y9J8MO2IAFXVHM0H
-    schemaVersion: 5.14.1
+    schemaVersion: 5.14.3
   image-optimize:
     edition: standard
     enabled: true
@@ -66,7 +66,7 @@ system:
   edition: solo
   live: true
   name: 'Jeffs Amish Furniture'
-  schemaVersion: 5.8.0.3
+  schemaVersion: 5.9.0.8
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
