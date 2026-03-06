@@ -1,18 +1,34 @@
-# pull from github
+#!/bin/bash
+# Exit immediately if a command exits with a non-zero status.
+set -e
 
-git pull origin main
+# --- Configuration ---
+# The name of the Git branch you want to deploy.
+BRANCH="main"
 
-# NodeJS support, e.g. for vite
-# npm install
-# npm run build
+echo "--- Starting Git & Craft CMS deployment ---"
 
-composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+# Delete composer.lock and vendor directory BEFORE pulling from Git
+# This prevents conflicts if these files exist in the repository
+echo "Deleting composer.lock file and vendor directory..."
+rm -rf composer.lock
+rm -rf vendor
 
-# deployment best practices by craftcms docs:
-# https://craftcms.com/knowledge-base/deployment-best-practices
-php craft update/composer-install --interactive=0
-php craft migrate/all --no-content --interactive=0
-php craft project-config/apply
-php craft migrate --track=content --interactive=0
+# Pull the latest code from the configured 'origin' remote on the specified branch.
+echo "Pulling latest code from Git branch '$BRANCH'..."
+git pull origin "$BRANCH"
 
-echo "🚀 Application deployed!"
+# Install or update Composer dependencies.
+# The "--no-dev" flag ensures only production dependencies are installed.
+echo "Installing Composer dependencies..."
+composer install --no-interaction --no-progress --no-dev
+
+# Apply pending Craft and plugin database migrations, and project config changes.
+echo "Applying database migrations and project config..."
+php craft up --interactive=0
+
+# Clear Craft's caches to ensure all changes take effect immediately.
+echo "Clearing Craft caches..."
+php craft clear-caches/all
+
+echo "--- Deployment finished successfully ---"
