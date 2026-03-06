@@ -1,4 +1,4 @@
-dateModified: 1772719416
+dateModified: 1772826022
 email:
   fromEmail: admin@example.com
   fromName: 'Jeffs Amish Furniture'
@@ -30,7 +30,6 @@ meta:
     9d93bd96-bdd3-45ef-9cbc-bd10f7e614c6: 'Catalog Link' # Catalog Link
     052ec829-cd89-4e73-9d37-e3c1c3716d98: 'Page Builder' # Page Builder
     54cc2d09-8e13-4b06-ae04-d2d04ad2b962: 'Contact Us' # Contact Us
-    209b2ec4-e859-45bf-b13f-41718a860bb7: Simple # Simple
     554e1d91-27c8-406c-93f4-7d8b0053103c: Body # Body
     1074ed63-9cf0-42d1-bb9d-d73f1d0fac32: Catalog # Catalog
     9879dccc-a097-4855-aa3e-e8973ac227a1: Image # Image
@@ -47,7 +46,7 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.0.0
+    schemaVersion: 5.0.0.1
   cp-clearcache:
     edition: standard
     enabled: true
