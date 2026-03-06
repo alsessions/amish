@@ -1,7 +1,5 @@
 # pull from github
 
-umask 0002
-
 git pull origin main
 
 # NodeJS support, e.g. for vite
@@ -16,8 +14,5 @@ php craft update/composer-install --interactive=0
 php craft migrate/all --no-content --interactive=0
 php craft project-config/apply
 php craft migrate --track=content --interactive=0
-
-# Re-apply writable permissions for Apache/PHP (run via bash; no chmod +x needed)
-bash ./scripts/set-craft-permissions.sh "$(pwd)"
 
 echo "🚀 Application deployed!"
