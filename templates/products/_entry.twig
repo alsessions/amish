@@ -4,7 +4,29 @@
 {% set heroAsset = entry.featuredImage.one() %}
 <section class="w-full relative h-96 md:h-[28rem] lg:h-[38rem] overflow-visible mb-8">
     {% if heroAsset %}
-        <img src="{{ heroAsset.url }}" alt="{{ entry.title }}" class="w-full h-full object-cover object-center" loading="eager" />
+        {% if attribute(heroAsset, 'optimizedHero') is defined and heroAsset.optimizedHero %}
+            {% set optimizedHero = heroAsset.optimizedHero %}
+            {% set webpSrcset = optimizedHero.srcsetWebp() %}
+            <picture class="block w-full h-full">
+                {% if webpSrcset %}
+                    <source
+                        srcset="{{ webpSrcset }}"
+                        sizes="100vw"
+                        type="image/webp"
+                    />
+                {% endif %}
+                <img
+                    srcset="{{ optimizedHero.srcset() }}"
+                    sizes="100vw"
+                    src="{{ optimizedHero.src() }}"
+                    alt="{{ entry.title }}"
+                    class="w-full h-full object-cover object-center"
+                    loading="eager"
+                />
+            </picture>
+        {% else %}
+            <img src="{{ heroAsset.url }}" alt="{{ entry.title }}" class="w-full h-full object-cover object-center" loading="eager" />
+        {% endif %}
     {% else %}
         <img src="/assets/images/amish_wood.jpg" alt="Old Amish Barn" class="w-full h-full object-cover object-center" loading="eager" />
     {% endif %}

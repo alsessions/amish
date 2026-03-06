@@ -1,4 +1,4 @@
-dateModified: 1772826022
+dateModified: 1772831887
 email:
   fromEmail: admin@example.com
   fromName: 'Jeffs Amish Furniture'
@@ -35,6 +35,7 @@ meta:
     9879dccc-a097-4855-aa3e-e8973ac227a1: Image # Image
     46692f35-2d90-4c5a-881a-b12fe38261bb: 'Featured Image' # Featured Image
     57448539-5980-4f7e-a2f8-f618d7d5a8d1: 'Public Schema' # Public Schema
+    c5199e9a-4c8e-4613-b710-b4e0ba44e04b: 'Optimized Hero' # Optimized Hero
     d4a0c17c-c177-4c51-b9c1-db9ed5b3cab8: 'Jeffs Amish Furniture' # Jeffs Amish Furniture
     d8e1fff6-4856-4995-baa0-63cd11e269d0: Images # Images
     d524211a-0921-4e1c-b85c-53439c75de38: About # About

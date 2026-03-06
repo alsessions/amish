@@ -39,6 +39,7 @@ fieldLayouts:
             dateAdded: '2025-05-26T21:22:24+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: eb4751bc-b634-4972-b531-ee04ca79a67b # Optimized Card
             handle: null
             instructions: null
@@ -50,9 +51,26 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2026-03-06T21:18:07+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c5199e9a-4c8e-4613-b710-b4e0ba44e04b # Optimized Hero
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 26464f94-39c0-4f90-be48-f5cc8a222fac
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: bbe90ec4-c5bf-459f-ab44-f755f3016159
         userCondition: null
+    thumbFieldKey: null
 fs: images
 handle: images
 name: Images
