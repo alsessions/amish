@@ -22,15 +22,19 @@
         <div class="w-full overflow-hidden">
         {% if asset and attribute(asset, 'optimizedCard') is defined and asset.optimizedCard %}
 
-          {{ asset.optimizedCard.imgTag().render({
-            alt: product.title,
-            class: 'w-full h-full object-cover object-center',
-            loading: 'lazy'
-          }) }}
+          <a href="{{ product.url }}" aria-label="View {{ product.title }}">
+            {{ asset.optimizedCard.imgTag().render({
+              alt: product.title,
+              class: 'w-full h-full object-cover object-center',
+              loading: 'lazy'
+            }) }}
+          </a>
 
         {% elseif asset %}
 
-          <img src="{{ asset.url }}" alt="{{ product.title }}" class="w-full h-full object-cover object-center" loading="lazy" />
+          <a href="{{ product.url }}" aria-label="View {{ product.title }}">
+            <img src="{{ asset.url }}" alt="{{ product.title }}" class="w-full h-full object-cover object-center" loading="lazy" />
+          </a>
 
         {% else %}
 
