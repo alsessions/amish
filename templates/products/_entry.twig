@@ -45,12 +45,21 @@
 {% block content %}
 <section class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 mb-16 min-h-screen">
   {% set catalogLink = entry.catalogLink ?? null %}
-  <div class="mb-10 flex justify-center">
-    {% if catalogLink and catalogLink.url %}
-      <a href="{{ catalogLink.url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors duration-200">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path fill="#fff" d="M10 15.5v-3h1v3h-1zm2 0v-3h1v3h-1z"/></svg>
-        <span>Download Catalog</span>
-      </a>
+  {% set catalogLink2 = entry.catalogLink2 ?? null %}
+  <div class="mb-10 flex flex-wrap justify-center gap-4">
+    {% if (catalogLink and catalogLink.url) or (catalogLink2 and catalogLink2.url) %}
+      {% if catalogLink and catalogLink.url %}
+        <a href="{{ catalogLink.url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors duration-200">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path fill="#fff" d="M10 15.5v-3h1v3h-1zm2 0v-3h1v3h-1z"/></svg>
+          <span>Download Catalog</span>
+        </a>
+      {% endif %}
+      {% if catalogLink2 and catalogLink2.url %}
+        <a href="{{ catalogLink2.url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-colors duration-200">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/><path fill="#fff" d="M10 15.5v-3h1v3h-1zm2 0v-3h1v3h-1z"/></svg>
+          <span>Download Catalog 2</span>
+        </a>
+      {% endif %}
     {% else %}
       <span class="inline-flex items-center gap-3 bg-gray-400 text-gray-200 font-semibold px-6 py-3 rounded-lg shadow-lg cursor-not-allowed">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/></svg>
