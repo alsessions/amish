@@ -1,8 +1,16 @@
-dateModified: 1773502879
+dateModified: 1773505080
 email:
-  fromEmail: admin@example.com
+  fromEmail: sales@jeffsamishfurniture.com
   fromName: 'Jeffs Amish Furniture'
-  transportType: craft\mail\transportadapters\Sendmail
+  replyToEmail: null
+  template: null
+  transportSettings:
+    host: smtp.zoho.com
+    password: Sarafin12!
+    port: '465'
+    useAuthentication: '1'
+    username: sales@jeffsamishfurniture.com
+  transportType: craft\mail\transportadapters\Smtp
 fs:
   catalogs:
     hasUrls: true
