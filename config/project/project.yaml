@@ -1,4 +1,4 @@
-dateModified: 1773505080
+dateModified: 1781117206
 email:
   fromEmail: sales@jeffsamishfurniture.com
   fromName: 'Jeffs Amish Furniture'
@@ -55,7 +55,7 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 5.0.0.1
+    schemaVersion: 5.6.0.0
   cp-clearcache:
     edition: standard
     enabled: true
@@ -64,7 +64,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: ZJQMO7J4Y9J8MO2IAFXVHM0H
-    schemaVersion: 5.14.3
+    schemaVersion: 5.15.1
   image-optimize:
     edition: standard
     enabled: true
@@ -74,8 +74,9 @@ system:
   edition: solo
   live: true
   name: 'Jeffs Amish Furniture'
-  schemaVersion: 5.9.0.8
-  timeZone: America/Los_Angeles
+  retryDuration: null
+  schemaVersion: 5.10.0.0
+  timeZone: America/New_York
 users:
   allowPublicRegistration: false
   defaultGroup: null

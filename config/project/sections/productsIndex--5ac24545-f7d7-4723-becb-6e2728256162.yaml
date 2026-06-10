@@ -5,6 +5,7 @@ entryTypes:
     uid: f8b59243-10a7-4ff8-aff0-0894166c1489 # Page Content
 handle: productsIndex
 maxAuthors: 1
+minAuthors: 1
 name: 'Products Index'
 previewTargets:
   -

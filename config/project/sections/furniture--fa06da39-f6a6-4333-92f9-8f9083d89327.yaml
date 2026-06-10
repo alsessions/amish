@@ -5,6 +5,7 @@ entryTypes:
     uid: 3ec41d95-2d59-45ff-a62f-23803f31acfc # Product
 handle: furniture
 maxAuthors: 1
+minAuthors: 1
 name: 'Furniture Section'
 previewTargets:
   -
